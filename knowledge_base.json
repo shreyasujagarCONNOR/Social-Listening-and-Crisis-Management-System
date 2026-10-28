@@ -1,0 +1,116 @@
+[
+ {
+  "id": "tone_voice",
+  "kind": "Tone guide",
+  "title": "Voice",
+  "text": "ZipBite sounds like a calm, helpful friend on the support team: warm, short and honest. 1) Say sorry in the first sentence when something went wrong. One sorry, not three. 2) Name the problem in the customer's own words (for example '75 minutes late') so they know a person read it. 3) Say what happens next in one line and ask only for what we need, usually the order ID by DM. 4) Never argue. Never blame the customer, the rider or the restaurant. Never get defensive. 5) No company-speak: write 'Sorry about this', not 'We regret the inconvenience caused'."
+ },
+ {
+  "id": "tone_language",
+  "kind": "Tone guide",
+  "title": "Language and format",
+  "text": "Reply in the customer's language. English post: English. Hinglish post: Hinglish in Roman letters, an easy mix of Hindi and English (example: 'Sorry about this, hum delivery partner se check kar rahe hain.'). Hindi post: simple Hindi in Devanagari (example: 'यह सुनकर हमें बहुत दुख हुआ। हमारी टीम इसे देख रही है।'). Do not switch language halfway; common English words (order, DM, app) are fine inside Hindi and Hinglish. Format: under 280 characters. At most one emoji, none on health, safety or harassment posts. Never ask for phone number, address, card details or OTP in public; ask the customer to DM the order ID. Write 'order ID' in words, never a template tag. Do not tag other accounts or repeat hashtags."
+ },
+ {
+  "id": "tone_words",
+  "kind": "Tone guide",
+  "title": "Words to use and avoid",
+  "text": "Use: 'Sorry about this', 'We are looking into it', 'Our team will review it', 'Please DM us your order ID', 'Thank you for telling us'. Avoid: 'We regret the inconvenience', 'As per our policy', 'immediately', 'right away', 'ASAP', 'sort this out', 'resolved', 'guaranteed', 'calm down', 'you are mistaken'."
+ },
+ {
+  "id": "never_say",
+  "kind": "Crisis playbook",
+  "title": "Never say in public",
+  "text": "Never state a refund, credit, compensation or any amount unless the playbook says it may be stated. Never state a time or speed ('immediately', 'in 10 minutes'). Never give the cause of a problem or say who is at fault (rider, restaurant, customer). Never give medical advice beyond 'please see a doctor if you feel unwell'. Never admit legal blame or comment on a legal or privacy matter. Never invent order details such as an order total, rider name or delivery time."
+ },
+ {
+  "id": "playbook_crisis",
+  "kind": "Crisis playbook",
+  "title": "Severity levels and crisis handling",
+  "text": "Level 1 routine (praise, questions): no alert. Level 2 complaint (late, wrong item, spill, app bug, pricing, poor support): Customer Support Lead, human acts within 4 hours. Level 3 urgent (health or safety, food poisoning, harassment, privacy leak, discrimination, legal threat): Social Media Lead plus the matching owner (Food Safety Lead, Trust & Safety Lead or Legal Counsel), human acts within 15 minutes. Level 4 crisis (the model predicts a crisis, or a level 3 post is spreading): PR Lead, Social Media Lead and the owner; holding statement approved within 30 minutes. In a crisis: post one short holding statement showing concern and say we are looking into it, move the conversation to DM, do not reply repeatedly in the thread, promise nothing about causes, compensation or timelines until facts are checked, and have a senior person approve every public reply. Only a person can lower a level."
+ },
+ {
+  "id": "playbook_safety",
+  "kind": "Crisis playbook",
+  "title": "Food safety and health (level 3)",
+  "text": "Show concern for the person first. Health advice is only 'please see a doctor if you feel unwell'. No emoji, humour or promotion. Do not guess the cause and do not admit legal blame. Ask for the order ID by DM so a senior team member can reach out. Alert the Food Safety Lead and PR Lead. Examples. English: 'We are very concerned to hear this. If you feel unwell, please see a doctor. Please DM us your order ID so a senior team member can reach out.' Hinglish: 'Ye sunkar humein bahut chinta hui. Agar tabiyat theek na lage to please doctor ko dikhayein. Apna order ID DM karein, hamari senior team aapse sampark karegi.' Hindi: 'यह सुनकर हमें बहुत चिंता हुई। अगर तबीयत ठीक न लगे तो कृपया डॉक्टर को दिखाएँ। कृपया DM में अपना ऑर्डर आईडी भेजें, हमारी सीनियर टीम आपसे संपर्क करेगी।'"
+ },
+ {
+  "id": "playbook_rider",
+  "kind": "Crisis playbook",
+  "title": "Rider conduct and personal safety",
+  "text": "Take it seriously. Do not defend or name the rider. Say the report goes to the rider-safety team and move to DM. If the customer may be in danger, say they should contact local emergency services. Harassment or a threat is level 3: alert the Trust & Safety Lead at once. Never promise what happens to the rider. Examples. English: 'We are sorry about this experience. We are passing your report to our rider-safety team. Please DM us your order ID.' Hinglish: 'Is experience ke liye sorry. Hum aapki report rider-safety team ko bhej rahe hain. Please DM mein apna order ID bhejiye.' Hindi: 'इस अनुभव के लिए हमें खेद है। हम आपकी शिकायत राइडर-सेफ्टी टीम को भेज रहे हैं। कृपया DM में अपना ऑर्डर आईडी भेजें।'"
+ },
+ {
+  "id": "playbook_privacy_legal",
+  "kind": "Crisis playbook",
+  "title": "Data privacy, discrimination and legal threats (level 3)",
+  "text": "Data privacy: do not confirm or deny a leak in public; say the team is looking into it and ask them to DM; alert Legal Counsel and the security team. Discrimination or unfair treatment: acknowledge it seriously, do not explain it away or argue; alert the Trust & Safety Lead and PR Lead. Legal threat: do not admit fault or argue; say the team will look into it and ask them to DM; alert Legal Counsel; no more public replies until Legal approves."
+ },
+ {
+  "id": "playbook_sarcasm",
+  "kind": "Crisis playbook",
+  "title": "Sarcastic posts",
+  "text": "Do not copy the joke or reply with sarcasm. Answer the real complaint underneath, calmly and sincerely, then move to DM. Reply in the customer's language."
+ },
+ {
+  "id": "playbook_delay",
+  "kind": "Crisis playbook",
+  "title": "Delivery Logistics: late or delayed order",
+  "text": "Say sorry for the delay and that we are checking with the delivery partner. Ask the customer to DM the order ID. Never promise an arrival time, a refund or a credit amount in public. SAMPLE internal policy: an order more than 45 minutes late can get a credit, confirmed privately by a support agent. Examples. English: 'Sorry about this. We are checking with the delivery partner. Please DM us your order ID so our team can look into it.' Hinglish: 'Sorry about this, hum delivery partner se check kar rahe hain. Please DM karke apna order ID bhej dijiye, team dekh legi.' Hindi: 'देरी के लिए हमें खेद है। हम डिलीवरी पार्टनर से जाँच कर रहे हैं। कृपया DM में अपना ऑर्डर आईडी भेजें, हमारी टीम इसे देखेगी।'"
+ },
+ {
+  "id": "playbook_order",
+  "kind": "Crisis playbook",
+  "title": "Order Accuracy: wrong or missing item",
+  "text": "Say sorry for the mix-up. Ask for the order ID and what was missing or wrong by DM, and say the team will review it. Never promise a refund or re-delivery before the team has checked. SAMPLE internal policy: a verified missing or wrong item is refunded or re-delivered. Examples. English: 'Sorry about the mix-up. Please DM us your order ID and what was missing, and our team will review it.' Hinglish: 'Sorry for the mix-up. Please DM mein apna order ID aur kya missing tha bata dijiye, hamari team review karegi.' Hindi: 'गड़बड़ी के लिए हमें खेद है। कृपया DM में अपना ऑर्डर आईडी और क्या कम था, यह बताएँ। हमारी टीम इसकी समीक्षा करेगी।'"
+ },
+ {
+  "id": "playbook_packaging",
+  "kind": "Crisis playbook",
+  "title": "Packaging and spillage",
+  "text": "Say sorry about the spill. Ask for a photo and the order ID by DM and say the team will review it. Never blame the rider or the restaurant. Never promise a refund in public. SAMPLE internal policy: spillage is reviewed from the photo and order ID."
+ },
+ {
+  "id": "playbook_quality",
+  "kind": "Crisis playbook",
+  "title": "Food Quality: taste, cold or stale food",
+  "text": "Thank the customer for telling us, say sorry, and say we will share this with the restaurant partner. Ask for the order ID and a photo by DM. Do not argue about taste. Never promise compensation or name the cause. If the post mentions illness, a foreign object or a health risk, treat it as level 3 food safety instead."
+ },
+ {
+  "id": "playbook_app",
+  "kind": "Crisis playbook",
+  "title": "App bugs and payment problems",
+  "text": "Say sorry for the trouble and that the tech team is looking into it. Ask for the phone model and app version by DM. Never promise a fix date. For a double charge say the payments team will check and do not promise a refund in public."
+ },
+ {
+  "id": "playbook_pricing",
+  "kind": "Crisis playbook",
+  "title": "Pricing, fees and promos",
+  "text": "Stay factual and polite. Fees depend on distance, demand and time, and the price breakup is shown in the app. Do not announce any discount or promo code that is not on the approved list. If a promo did not apply, ask for the order ID by DM."
+ },
+ {
+  "id": "playbook_support",
+  "kind": "Crisis playbook",
+  "title": "Poor customer support experience",
+  "text": "Say sorry that they felt unheard and that a senior agent will look at this. Ask for the order ID by DM. If the customer says the support chat is not working, acknowledge it. Never make excuses for the agent or the system and never give a response time."
+ },
+ {
+  "id": "playbook_query",
+  "kind": "Crisis playbook",
+  "title": "Questions about the service",
+  "text": "Answer only if the answer is in approved information such as delivery areas and hours. If it is not, say we will check and point to the in-app help page or DM. Never guess delivery areas, hours or prices."
+ },
+ {
+  "id": "playbook_praise",
+  "kind": "Crisis playbook",
+  "title": "Praise and thanks",
+  "text": "A reply is optional. If the team replies, use one warm line and no offers or promo codes. Example: 'Thank you for telling us. We will pass this on to the team.' Hinglish: 'Shukriya batane ke liye. Hum ye team tak pahuncha denge.'"
+ },
+ {
+  "id": "playbook_media",
+  "kind": "Crisis playbook",
+  "title": "Large accounts, media and spam",
+  "text": "Large accounts, media and influencers are handled as level 4: the PR Lead approves the reply, post one reply, then move to DM. Spam, bots and abusive trolls: do not engage and flag the post for the team."
+ }
+]

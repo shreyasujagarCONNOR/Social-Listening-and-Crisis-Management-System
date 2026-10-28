@@ -1,1 +1,1 @@
-{"cutoff_viral": 0.4, "cutoff_crisis": 0.3, "sklearn_version": "1.6.1"}
+{"cutoff_viral": 0.2, "cutoff_crisis": 0.2}

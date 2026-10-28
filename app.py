@@ -17,22 +17,22 @@ st.set_page_config(page_title="ZipBite Social Listening", page_icon="🛵", layo
 DEMOS = {
     "Routine mention": dict(
         text="Ordered a thali from @ZipBite for lunch. Arrived hot and right on time. 👍",
-        language="English", platform="Instagram", followers=800, verified=False, pic=False, profpic=True),
+        platform="Instagram", followers=800, verified=False, pic=False, profpic=True),
     "Complaint needing a reply": dict(
         text="@ZipBite my biryani order is 75 mins late and the support chat is not opening. Rs 450 already paid. Please respond.",
-        language="English", platform="X", followers=2500, verified=False, pic=False, profpic=True),
+        platform="X", followers=2500, verified=False, pic=False, profpic=True),
     "Crisis (food safety)": dict(
         text="Diwali week and @ZipBite sends me a cockroach in my thali. My kid already ate half. 📸 Photo attached. Tagging @FSSAI, please RT. #FoodSafety",
-        language="English", platform="X", followers=18000, verified=False, pic=True, profpic=True),
+        platform="X", followers=18000, verified=False, pic=True, profpic=True),
     "Crisis (Hindi, hospital)": dict(
         text="@ZipBite के खाने में कीड़ा निकला! बच्चे को उल्टी हो रही है, अस्पताल जा रहे हैं 😡😡 #FoodSafety",
-        language="Hindi", platform="X", followers=25000, verified=True, pic=False, profpic=True),
+        platform="X", followers=25000, verified=True, pic=False, profpic=True),
     "Edge case: sarcasm (Hinglish)": dict(
         text="Wah @ZipBite, 2 ghante se 'arriving soon'. Kya service hai bhai, dil jeet liya 🙄",
-        language="Hinglish", platform="X", followers=1200, verified=False, pic=False, profpic=True),
+        platform="X", followers=1200, verified=False, pic=False, profpic=True),
     "Edge case: mixed feelings (Hinglish)": dict(
         text="@ZipBite pizza theek-thaak tha par rider bhaiya ko raise do, barish mein 20 min tak gate pe khade rahe 🙏",
-        language="Hinglish", platform="Facebook", followers=600, verified=False, pic=False, profpic=True),
+        platform="Facebook", followers=600, verified=False, pic=False, profpic=True),
 }
 
 FLAG_HELP = {
@@ -47,7 +47,7 @@ PRIORITY_HELP = {
 }
 
 # ------------------------------------------------------------------ state
-for k, v in dict(f_text="", f_lang="English", f_plat="X", f_fol=1000, f_ver=False, f_pic=False, f_pp=True,
+for k, v in dict(f_text="", f_plat="X", f_fol=1000, f_ver=False, f_pic=False, f_pp=True,
                  f_date=dt.date.today(), f_time=dt.datetime.now().time().replace(second=0, microsecond=0),
                  result=None, log=[], rid=0, events=zc.DEFAULT_EVENTS, demo_choice="Custom post").items():
     st.session_state.setdefault(k, v)
@@ -57,7 +57,7 @@ def load_demo():
     name = st.session_state.demo_choice
     if name in DEMOS:
         d = DEMOS[name]
-        st.session_state.update(f_text=d["text"], f_lang=d["language"], f_plat=d["platform"], f_fol=d["followers"],
+        st.session_state.update(f_text=d["text"], f_plat=d["platform"], f_fol=d["followers"],
                                 f_ver=d["verified"], f_pic=d["pic"], f_pp=d["profpic"])
         st.session_state.result = None
 
@@ -125,9 +125,7 @@ with tab_main:
     with left:
         st.subheader("1. The post")
         st.text_area("Post text", key="f_text", height=140, placeholder="Paste a post that mentions @ZipBite")
-        c1, c2 = st.columns(2)
-        c1.selectbox("Language", ["English", "Hinglish", "Hindi"], key="f_lang")
-        c2.selectbox("Platform", zc.CATS["platform"], key="f_plat")
+        st.selectbox("Platform", zc.CATS["platform"], key="f_plat")
         c3, c4 = st.columns(2)
         c3.date_input("Date", key="f_date")
         c4.time_input("Time", key="f_time")
@@ -147,7 +145,7 @@ with tab_main:
         elif assets is None:
             st.error("The model files did not load, so predictions are unavailable.")
         else:
-            post = dict(text=st.session_state.f_text.strip(), language=st.session_state.f_lang,
+            post = dict(text=st.session_state.f_text.strip(),
                         platform=st.session_state.f_plat,
                         timestamp=f"{st.session_state.f_date} {st.session_state.f_time:%H:%M}",
                         author_followers=int(st.session_state.f_fol), author_verified=bool(st.session_state.f_ver),
@@ -183,9 +181,9 @@ with tab_main:
 
             # --- step 1
             st.subheader("2. What the classifier read (Gemini)")
-            st.table(pd.DataFrame({"Field": ["Sentiment (words only)", "Sarcasm", "Strong emotion", "Urgency",
+            st.table(pd.DataFrame({"Field": ["Language", "Sentiment (words only)", "Sarcasm", "Strong emotion", "Urgency",
                                              "Topic", "Needs a reply", "About today's events"],
-                                   "Value": [L["sentiment_from_text_only"], "yes" if L["sarcasm"] else "no",
+                                   "Value": [L["language"], L["sentiment_from_text_only"], "yes" if L["sarcasm"] else "no",
                                              "yes" if L["high_arousal_emotion"] else "no", L["urgency"],
                                              L["topic"], L["needs_reply"],
                                              "yes" if L["relevancy_to_todays_events"] else "no"]}).set_index("Field"))
@@ -198,6 +196,9 @@ with tab_main:
                 col.metric(label, f"{p:.0%}")
                 col.progress(min(max(p, 0.0), 1.0))
                 col.caption(f"{'YES' if yes else 'No'} (alert cutoff {cut:.0%})")
+
+            st.caption("Crisis chance = chance of going viral, counted only when the post is negative "
+                       "(sarcastic praise counts as negative). A post that cannot spread cannot be a crisis.")
 
             # --- step 3
             st.subheader("4. Reply draft for a person to approve")
@@ -277,8 +278,8 @@ with tab_about:
     st.markdown("""
 **What happens to a post**
 
-1. **Gemini reads the post** and labels sentiment, sarcasm, strong emotion, urgency, topic, whether a reply is needed, and whether it is about today's events.
-2. **Two logistic-regression models** use those labels plus author details to estimate *will it go viral?* and *is it a crisis?* at posting time. One hour later, a second pair of models also uses likes and comments.
+1. **Gemini reads the post** and labels its language, sentiment, sarcasm, strong emotion, urgency, topic, whether a reply is needed, and whether it is about today's events.
+2. **A logistic-regression model** uses those labels plus author details (followers matter a lot: reach is what makes a post spread) to estimate *will it go viral?* at posting time. One hour later, a second model also uses likes and comments. **A crisis is a post that spreads and is negative**, so the crisis chance is the viral chance counted only for negative posts.
 3. **If a reply is needed**, the drafter reads the matching pages of the team's tone guide and crisis playbook and writes a draft. Urgent posts always get a draft and always go to a person first.
 4. **A person approves, edits or rejects** the draft. Nothing is posted automatically.
 

@@ -201,9 +201,17 @@ def build_features_1h(d):
     return X
 
 
+def _find(base, name):
+    """The model files may sit in a models/ folder or directly next to app.py."""
+    for p in (base / "models" / name, base / name):
+        if p.exists():
+            return p
+    raise FileNotFoundError(f"{name} not found in {base} or {base / 'models'}")
+
+
 def load_assets(base=HERE):
-    m = joblib.load(base / "models" / "zipbite_models.joblib")
-    m1 = joblib.load(base / "models" / "zipbite_models_1h.joblib")
+    m = joblib.load(_find(base, "zipbite_models.joblib"))
+    m1 = joblib.load(_find(base, "zipbite_models_1h.joblib"))
     kb = json.load(open(base / "knowledge_base.json", encoding="utf-8"))
     cfg = json.load(open(base / "config.json", encoding="utf-8"))
     return {"viral": m["viral"], "crisis": m["crisis"], "columns": m["columns"],
